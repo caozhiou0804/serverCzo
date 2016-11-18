@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace和定义的Mapper接口对应，并实现其中的方法 -->
+<mapper namespace="com.doctor.mapper.FeaturesMapper">
+
+	<sql id="limitSql">
+		<if test="limit != null">
+			<![CDATA[ limit #{limit},#{pageSize}]]>
+		</if>
+	</sql>
+	<!-- caozhiou__start -->
+	<select id="getCaozhiouData" parameterType="HashMap" resultType="HashMap">
+		<![CDATA[
+		 		select * from caozhiou 
+		]]>
+	</select>
+
+	<select id="insertCaozhiouData" parameterType="HashMap"
+		resultType="HashMap">
+		<![CDATA[
+		 			insert into caozhiou (uid,name,sex,mobile) 
+			values(#{uid},#{name},#{sex},#{mobile}) 
+		]]>
+	</select>
+
+	<select id="deleteCaozhiouData" parameterType="HashMap"
+		resultType="HashMap">
+		<![CDATA[
+			delete from caozhiou where uid=#{uid}
+		]]>
+	</select>
+	<select id="updateCaozhiouData" parameterType="HashMap"
+		resultType="HashMap">
+		<![CDATA[
+			update caozhiou set  
+		]]>
+		<if test="name != null">
+			name=#{name}
+		</if>
+		<if test="sex != null">
+			,sex=#{sex}
+		</if>
+		<if test="mobile != null">
+			,mobile=#{mobile}
+		</if>
+		<if test="uid != null">
+			where id = #{uid}
+		</if>
+	</select>
+
+	<!-- caozhiou__end -->
+	<select id="queryMembers" parameterType="HashMap" resultType="HashMap">
+		<![CDATA[
+		 		select * from admin 
+		]]>
+	</select>
+	
+	<select id="registeMember" parameterType="HashMap" resultType="HashMap">
+		<![CDATA[
+		 		insert into admin (username,password) 
+			values(#{username},#{password}) 
+		]]>
+	</select>
+	
+
+</mapper>

@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//src/com/doctor/TxInterceptor.java=UTF-8
+encoding//src/com/doctor/mapper/FeaturesMapper.java=UTF-8
+encoding//src/com/doctor/service/WxFeaturesService.java=UTF-8
+encoding//src/com/doctor/service/impl/WxFeaturesServiceImpl.java=UTF-8
+encoding//src/com/doctor/util/CORSFilter.java=UTF-8
+encoding//src/com/doctor/util/JSONUtil.java=UTF-8
+encoding//src/com/doctor/web/CzoControler.java=UTF-8
